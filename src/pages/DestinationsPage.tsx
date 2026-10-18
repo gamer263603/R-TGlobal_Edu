@@ -5,7 +5,7 @@ const destinations = [
     unis: '900+ Universities',
     desc: "One of the fastest-growing education hubs in Asia, known for elite engineering and medical institutes, affordable education, and a vibrant cultural experience. India offers excellent value for international students.",
     highlights: [
-      'ICCR Scholarship — up to 100% tuition covered',
+      'ICCR Scholarship — 50% to 100% tuition covered',
       'Affordable tuition and living costs',
       'World-renowned IITs and IIMs',
       'English-taught programs',
@@ -31,6 +31,7 @@ const destinations = [
     unis: '400+ Universities',
     desc: "A hidden gem in the heart of Europe, Poland offers high-quality education at a fraction of Western European costs. With a rich history, growing economy, and English-taught programs, it's an increasingly popular destination for international students.",
     highlights: [
+      '50% to 100% scholarship opportunities',
       'Affordable tuition and living costs',
       'English-taught programs in EU',
       'Schengen Area access',
@@ -54,7 +55,7 @@ export function DestinationsPage() {
           </p>
           <div className="mt-8 inline-flex items-center gap-2 px-5 py-2.5 bg-amber-400/20 backdrop-blur-sm border border-amber-400/40 rounded-full text-amber-200 text-sm font-semibold">
             <span className="text-lg">🎓</span>
-            100% Scholarship Opportunities Available
+            50%–100% Scholarship Opportunities Available
           </div>
         </div>
       </section>
@@ -106,25 +107,25 @@ export function DestinationsPage() {
         </div>
       </section>
 
-      {/* 100% Scholarship Highlight Section */}
+      {/* 50%–100% Scholarship Highlight Section */}
       <section className="py-20 bg-gradient-to-br from-amber-50 to-blue-50 relative overflow-hidden">
         <div className="absolute top-10 right-10 w-72 h-72 bg-amber-200/40 blur-3xl rounded-full" />
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
           <span className="inline-flex items-center gap-2 px-4 py-2 bg-amber-400/20 border border-amber-400/40 rounded-full text-amber-700 text-sm font-semibold mb-6">
-            <span className="text-lg">💰</span> Fully Funded Opportunities
+            <span className="text-lg">💰</span> 50%–100% Funded Opportunities
           </span>
           <h2 className="text-3xl md:text-5xl font-bold text-slate-800 mb-4">
-            100% Scholarships Available
+            50%–100% Scholarships Available
           </h2>
           <p className="text-slate-600 max-w-2xl mx-auto text-lg mb-10">
-            Study abroad with zero tuition fees. Our partner countries offer fully funded
-            scholarships covering tuition, living expenses, and more.
+            Study abroad with reduced or zero tuition fees. Our partner countries offer
+            scholarships covering 50% to 100% of tuition and living expenses.
           </p>
           <div className="grid sm:grid-cols-3 gap-6">
             {[
-              { country: 'China', flag: '🇨🇳', scheme: 'CSC Government Scholarship', detail: 'Full tuition + living stipend + accommodation' },
-              { country: 'India', flag: '🇮🇳', scheme: 'ICCR Scholarship', detail: 'Tuition Fee + housing/hostel' },
-              { country: 'Poland', flag: '🇵🇱', scheme: 'NAWA Scholarship', detail: 'Full tuition + Job salary' },
+              { country: 'China', flag: '🇨🇳', scheme: 'CSC Government Scholarship', detail: 'Full tuition + living stipend + accommodation (up to 100%)' },
+              { country: 'India', flag: '🇮🇳', scheme: 'ICCR Scholarship', detail: '50% to 100% tuition + housing/hostel' },
+              { country: 'Poland', flag: '🇵🇱', scheme: 'NAWA Scholarship', detail: '50% to 100% tuition + job salary' },
             ].map((s) => (
               <div key={s.country} className="bg-white rounded-2xl p-6 shadow-md border border-amber-100 hover:shadow-xl hover:-translate-y-1 transition-all">
                 <div className="text-4xl mb-3">{s.flag}</div>
