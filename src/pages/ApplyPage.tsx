@@ -107,8 +107,8 @@ export function ApplyPage() {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4 pt-20">
         <div className="max-w-xl w-full bg-white rounded-3xl shadow-xl p-10 text-center">
-          <div className="w-20 h-20 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-6">
-            <CheckCircle2 className="w-12 h-12 text-teal-600" />
+          <div className="w-20 h-20 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-6">
+            <CheckCircle2 className="w-12 h-12 text-amber-600" />
           </div>
           <h1 className="text-3xl font-bold text-slate-800 mb-4">Application Submitted!</h1>
           <p className="text-slate-600 text-lg mb-2 leading-relaxed">
@@ -120,7 +120,7 @@ export function ApplyPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={() => { setData(initialData); setSubmitted(false); setStep(0); }}
-              className="px-6 py-3 bg-teal-600 text-white rounded-xl font-semibold hover:bg-teal-700 transition-colors"
+              className="px-6 py-3 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition-colors"
             >
               Submit Another Application
             </button>
@@ -133,7 +133,7 @@ export function ApplyPage() {
     );
   }
 
-  const inputClass = 'w-full px-4 py-3 bg-white border rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all';
+  const inputClass = 'w-full px-4 py-3 bg-white border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all';
   const errorBorder = 'border-red-300';
   const normalBorder = 'border-gray-200';
   const labelClass = 'block text-sm font-medium text-slate-700 mb-2';
@@ -153,17 +153,17 @@ export function ApplyPage() {
               <div className="flex flex-col items-center">
                 <div
                   className={`w-11 h-11 rounded-xl flex items-center justify-center transition-all ${
-                    i <= step ? 'bg-teal-600 text-white shadow-md' : 'bg-gray-200 text-gray-400'
+                    i <= step ? 'bg-blue-600 text-white shadow-md' : 'bg-gray-200 text-gray-400'
                   }`}
                 >
                   {i < step ? <CheckCircle2 className="w-6 h-6" /> : <s.icon className="w-5 h-5" />}
                 </div>
-                <span className={`text-xs mt-2 font-medium hidden sm:block ${i <= step ? 'text-teal-700' : 'text-gray-400'}`}>
+                <span className={`text-xs mt-2 font-medium hidden sm:block ${i <= step ? 'text-blue-700' : 'text-gray-400'}`}>
                   {s.title}
                 </span>
               </div>
               {i < steps.length - 1 && (
-                <div className={`flex-1 h-1 mx-2 rounded-full transition-all ${i < step ? 'bg-teal-600' : 'bg-gray-200'}`} />
+                <div className={`flex-1 h-1 mx-2 rounded-full transition-all ${i < step ? 'bg-blue-600' : 'bg-gray-200'}`} />
               )}
             </div>
           ))}
@@ -258,10 +258,9 @@ export function ApplyPage() {
                 <label className={labelClass}>Preferred Destination Country *</label>
                 <select className={`${inputClass} ${errors.intended_country ? errorBorder : normalBorder}`} value={data.intended_country} onChange={(e) => update('intended_country', e.target.value)}>
                   <option value="">Select a country</option>
-                  <option>United Kingdom</option><option>United States</option><option>Australia</option>
-                  <option>Canada</option><option>Germany</option><option>New Zealand</option>
-                  <option>Ireland</option><option>Netherlands</option>
-                  <option>China</option><option>India</option><option>Poland</option>
+                  <option>India</option>
+                  <option>China</option>
+                  <option>Poland</option>
                   <option>Other</option>
                 </select>
                 {errors.intended_country && <p className="text-red-500 text-xs mt-1">{errors.intended_country}</p>}
@@ -269,7 +268,7 @@ export function ApplyPage() {
 
               <div>
                 <label className={labelClass}>Preferred University</label>
-                <input className={inputClass} value={data.intended_university} onChange={(e) => update('intended_university', e.target.value)} placeholder="e.g., University of Oxford (optional)" />
+                <input className={inputClass} value={data.intended_university} onChange={(e) => update('intended_university', e.target.value)} placeholder="e.g., University of Warsaw (optional)" />
               </div>
 
               <div className="grid sm:grid-cols-2 gap-5">
@@ -321,7 +320,7 @@ export function ApplyPage() {
 
               <div>
                 <label className={labelClass}>Institution Name *</label>
-                <input className={`${inputClass} ${errors.institution_name ? errorBorder : normalBorder}`} value={data.institution_name} onChange={(e) => update('institution_name', e.target.value)} placeholder="e.g., University of Cambridge" />
+                <input className={`${inputClass} ${errors.institution_name ? errorBorder : normalBorder}`} value={data.institution_name} onChange={(e) => update('institution_name', e.target.value)} placeholder="e.g., University of Warsaw" />
                 {errors.institution_name && <p className="text-red-500 text-xs mt-1">{errors.institution_name}</p>}
               </div>
 
@@ -429,14 +428,14 @@ export function ApplyPage() {
             </Link> }
 
             {step < steps.length - 1 ? (
-              <button onClick={next} className="flex items-center gap-2 px-6 py-3 bg-teal-600 text-white font-semibold rounded-xl hover:bg-teal-700 transition-colors shadow-md">
+              <button onClick={next} className="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition-colors shadow-md">
                 Continue <ArrowRight className="w-4 h-4" />
               </button>
             ) : (
               <button
                 onClick={handleSubmit}
                 disabled={submitting}
-                className="flex items-center gap-2 px-6 py-3 bg-teal-600 text-white font-semibold rounded-xl hover:bg-teal-700 transition-colors shadow-md disabled:opacity-60 disabled:cursor-not-allowed"
+                className="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition-colors shadow-md disabled:opacity-60 disabled:cursor-not-allowed"
               >
                 {submitting ? 'Submitting...' : 'Submit Application'} <Send className="w-4 h-4" />
               </button>
@@ -453,7 +452,7 @@ function ReviewSection({ title, items, onEdit }: { title: string; items: [string
     <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
       <div className="flex items-center justify-between mb-4">
         <h3 className="font-bold text-slate-800">{title}</h3>
-        <button onClick={onEdit} className="text-teal-600 text-sm font-medium hover:text-teal-700">Edit</button>
+        <button onClick={onEdit} className="text-blue-600 text-sm font-medium hover:text-blue-700">Edit</button>
       </div>
       <dl className="grid sm:grid-cols-2 gap-x-6 gap-y-3">
         {items.map(([label, value]) => (
