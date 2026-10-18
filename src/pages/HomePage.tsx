@@ -7,29 +7,23 @@ const aboutImage = 'https://images.pexels.com/photos/8199762/pexels-photo-819976
 const rtLogo = 'https://dbzrxxwjkpbhfwhrcgxv.supabase.co/storage/v1/object/public/logosImages/logo.svg';
 
 const destinations = [
-  { country: 'United Kingdom', flag: '🇬🇧', unis: '160+ Universities', desc: 'World-renowned universities, 2-year post-study work visa, and a rich academic heritage.' },
-  { country: 'United States', flag: '🇺🇸', unis: '200+ Universities', desc: 'Unmatched academic diversity, cutting-edge research, and flexible curricula.' },
-  { country: 'Australia', flag: '🇦🇺', unis: '100+ Universities', desc: 'High-quality education, post-study work rights up to 4 years, and a relaxed lifestyle.' },
-  { country: 'Canada', flag: '🇨🇦', unis: '120+ Universities', desc: 'Affordable tuition, clear PR pathways, and a safe, inclusive society.' },
-  { country: 'Germany', flag: '🇩🇪', unis: '80+ Universities', desc: 'Free or low tuition at public universities, strong engineering programs.' },
-  { country: 'China', flag: '🇨🇳', unis: '500+ Universities', desc: 'Fully funded CSC scholarships, affordable tuition, and a booming innovation ecosystem.' },
-  { country: 'India', flag: '🇮🇳', unis: '900+ Universities', desc: 'Elite IITs and IIMs, ICCR scholarships, and affordable English-taught programs.' },
-  { country: 'New Zealand', flag: '🇳🇿', unis: '40+ Universities', desc: 'Safe and peaceful with stunning natural beauty and practical learning.' },
-  { country: 'Ireland', flag: '🇮🇪', unis: '30+ Universities', desc: 'EU member state, tech hub of Europe, and a 2-year post-study work visa.' },
+  { country: 'India', flag: '🇮🇳', unis: '900+ Universities', desc: 'Elite IITs and IIMs, ICCR scholarships (50%–100%), and affordable English-taught programs.' },
+  { country: 'China', flag: '🇨🇳', unis: '500+ Universities', desc: '100% fully funded CSC scholarships, affordable tuition, and a booming innovation ecosystem.' },
+  { country: 'Poland', flag: '🇵🇱', unis: '400+ Universities', desc: '50%–100% scholarships, affordable EU education, and strong engineering programs.' },
 ];
 
 const services = [
   { icon: GraduationCap, title: 'University Applications', desc: 'Expert guidance to shortlist and apply to the right universities worldwide.' },
   { icon: FileText, title: 'Visa Assistance', desc: 'End-to-end visa documentation and interview preparation with a 98% success rate.' },
-  { icon: Award, title: 'Scholarship Guidance', desc: 'Access to 100% funded scholarships like CSC' },
+  { icon: Award, title: 'Scholarship Guidance', desc: 'Access to fully funded CSC scholarships, plus 50%–100% funded ICCR and NAWA awards.' },
   { icon: BookOpen, title: 'Test Preparation', desc: 'Coaching for IELTS, TOEFL, GRE, GMAT, and SAT to maximize your scores.' },
   { icon: Plane, title: 'Pre-Departure Support', desc: 'Travel, accommodation, and cultural orientation for a smooth transition.' },
   { icon: Users, title: 'Career Counseling', desc: 'Personalized career mapping to align your studies with your goals.' },
 ];
 
 const testimonials = [
-  { name: 'Aisha Khan', role: 'MSc Computer Science, University of Toronto', text: 'R&T Global Education guided me through every step — from shortlisting programs to my visa approval. I even received a fully funded scholarship in Canada!' },
-  { name: 'Rohan Mehta', role: 'BEng Mechanical, TU Munich', text: 'I never thought studying in Germany for free was possible. Their scholarship team helped me secure a DAAD award and a place at TU Munich.' },
+  { name: 'Aisha Khan', role: 'MSc Computer Science, University of Toronto', text: 'R&T Global Education guided me through every step — from shortlisting programs to my visa approval. I even received a fully funded scholarship!' },
+  { name: 'Rohan Mehta', role: 'BEng Mechanical, Warsaw University of Technology', text: 'I never thought studying in Poland with a 75% scholarship was possible. Their team helped me secure funding and a place at my dream university.' },
   { name: 'Sofia Martinez', role: 'MBA, University of Melbourne', text: 'The personalized counseling was incredible. My counselor knew exactly which universities fit my profile and budget.' },
 ];
 
@@ -41,9 +35,9 @@ const stats = [
 ];
 
 const scholarships = [
-  { country: 'China', flag: '🇨🇳', name: 'CSC Government Scholarship', perks: ['Full Tuition', 'Job Stipend', 'Accommodation'] },
-  { country: 'India', flag: '🇮🇳', name: 'ICCR Scholarship', perks: ['Tuition Fee', 'No Stipend', 'Housing'] },
-  { country: 'Poland', flag: '🇵🇱', name: 'Banach NAWA', perks: ['Full tuition', 'Job Stipend', 'Travel grant'] },
+  { country: 'China', flag: '🇨🇳', name: 'CSC Government Scholarship', badge: '100% Funded', perks: ['Full Tuition', 'Job Stipend', 'Accommodation'] },
+  { country: 'India', flag: '🇮🇳', name: 'ICCR Scholarship', badge: '50%–100% Funded', perks: ['50%–100% Tuition', 'Housing / Hostel', 'Monthly Allowance'] },
+  { country: 'Poland', flag: '🇵🇱', name: 'Banach NAWA', badge: '50%–100% Funded', perks: ['50%–100% Tuition', 'Job Stipend', 'Travel Grant'] },
 ];
 
 export function HomePage() {
@@ -77,8 +71,6 @@ export function HomePage() {
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-amber-400/10 blur-3xl animate-blob delay-1000 pointer-events-none" />
 
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20">
-      
-
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white/90 text-sm font-medium mb-6 border border-white/20 animate-fade-in-down animate-pulse-glow">
             <GraduationCap className="w-4 h-4 animate-float" />
@@ -93,12 +85,12 @@ export function HomePage() {
 
           <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-8 leading-relaxed animate-fade-in-up delay-400">
             Study abroad with confidence. Expert guidance for university applications, visas,
-            and <span className="text-amber-300 font-semibold">100% scholarships, & 75% scholarships</span> — everything in between.
+            and <span className="text-amber-300 font-semibold">100% &amp; 50%–100% scholarships</span> — everything in between.
           </p>
 
           {/* Quick trust chips */}
           <div className="flex flex-wrap justify-center gap-3 mb-10 animate-fade-in-up delay-500">
-            {['🇨🇳 CSC Scholarships', '🇮🇳 ICCR Grants', '🇩🇪 DAAD Awards', '🇨🇦 PR Pathways'].map((chip) => (
+            {['🇨🇳 100% CSC Scholarships', '🇮🇳 ICCR Grants', '🇵🇱 NAWA Awards', '🇪🇺 Schengen Access'].map((chip) => (
               <span
                 key={chip}
                 className="px-4 py-1.5 bg-white/10 backdrop-blur-sm border border-white/15 rounded-full text-white/85 text-sm font-medium"
@@ -153,7 +145,7 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* ================= 100% SCHOLARSHIPS ================= */}
+      {/* ================= SCHOLARSHIPS ================= */}
       <section className="py-24 bg-gradient-to-br from-amber-50 via-white to-blue-50 relative overflow-hidden">
         <div className="absolute top-10 left-10 w-72 h-72 bg-amber-200/40 blur-3xl rounded-full animate-float-slow pointer-events-none" />
         <div className="absolute bottom-10 right-10 w-80 h-80 bg-blue-200/40 blur-3xl rounded-full animate-float pointer-events-none" />
@@ -161,13 +153,13 @@ export function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-16 reveal">
             <span className="inline-flex items-center gap-2 px-4 py-2 bg-amber-400/20 border border-amber-400/40 rounded-full text-amber-700 text-sm font-semibold mb-4">
-              <Trophy className="w-4 h-4" /> Fully Funded
+              <Trophy className="w-4 h-4" /> Up to 100% Funded
             </span>
             <h2 className="text-3xl md:text-5xl font-bold text-slate-800 mt-2 mb-4">
-              100% Scholarships. <span className="text-blue-600">Zero Tuition.</span>
+              100% &amp; 50%–100% Scholarships. <span className="text-blue-600">Big Savings.</span>
             </h2>
             <p className="text-slate-600 max-w-2xl mx-auto text-lg">
-              We help you secure fully funded government scholarships covering tuition, living
+              We help you secure government scholarships covering up to 100% of tuition, living
               expenses, and accommodation — so finances never stand between you and your dream.
             </p>
           </div>
@@ -182,7 +174,7 @@ export function HomePage() {
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-5xl group-hover:scale-110 transition-transform duration-500">{s.flag}</span>
                   <span className="px-3 py-1 bg-amber-100 text-amber-700 text-xs font-bold rounded-full uppercase tracking-wider">
-                    100% & 75% Funded 
+                    {s.badge}
                   </span>
                 </div>
                 <h3 className="text-xl font-bold text-slate-800 mb-1">{s.name}</h3>
@@ -258,8 +250,8 @@ export function HomePage() {
               <p className="text-slate-600 text-lg leading-relaxed mb-6">
                 R&T Global Education & Ventures has been a leader in international education consulting for over
                 15 years. Our experienced counselors have helped thousands of students find their
-                ideal universities across the globe — including fully funded opportunities in
-                China, India, Germany, and beyond.
+                ideal universities across the globe — including 100% funded opportunities in
+                China and 50%–100% funded opportunities in India and Poland.
               </p>
               <ul className="space-y-4 mb-8">
                 {[
@@ -322,7 +314,7 @@ export function HomePage() {
               Popular Study Destinations
             </h2>
             <p className="text-slate-600 max-w-2xl mx-auto text-lg">
-              Explore top study destinations around the world — now including China and India with fully funded scholarship options.
+              Explore our top study destinations — China (100% funded), India and Poland (50%–100% scholarships).
             </p>
           </div>
 
