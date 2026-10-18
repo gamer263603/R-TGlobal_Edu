@@ -72,7 +72,7 @@ export function Navbar() {
           ====================================================== */}
           <Link
             to="/"
-            aria-label="R&T Global Education & Ventures - Home"
+            aria-label="R&T Global - Home"
             className="flex items-center shrink-0"
           >
             <div className="relative w-[100px] h-[92px] flex items-center justify-center overflow-visible">
@@ -101,12 +101,10 @@ export function Navbar() {
             {/* Brand text */}
             <div className="ml-1 md:ml-2 leading-none">
               <div className="text-white text-xl md:text-2xl font-bold tracking-tight whitespace-nowrap">
-                R&amp;T Global
+              
               </div>
 
-              <div className="text-amber-300 text-[10px] md:text-xs font-semibold tracking-wider mt-2 whitespace-nowrap">
-                EDUCATION &amp; VENTURES
-              </div>
+            
             </div>
           </Link>
 
